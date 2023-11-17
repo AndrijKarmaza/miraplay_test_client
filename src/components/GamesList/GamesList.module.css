@@ -1,0 +1,11 @@
+.games_list {
+  padding: 0;
+  width: 500px;
+}
+
+.game_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}

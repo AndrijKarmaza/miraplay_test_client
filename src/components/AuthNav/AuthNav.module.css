@@ -1,0 +1,9 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav_link:first-child {
+  margin-right: 50px;
+}

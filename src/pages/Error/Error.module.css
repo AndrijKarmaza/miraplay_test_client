@@ -1,0 +1,21 @@
+.error {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error > p {
+  font-size: 100px;
+}
+
+.error_btn {
+  padding: 8px 24px;
+  background-color: #e1b16a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.error_btn:hover {
+  background-color: #78a5a3;
+  color: #fff;
+}

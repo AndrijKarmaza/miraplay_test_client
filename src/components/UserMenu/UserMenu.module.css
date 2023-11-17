@@ -1,0 +1,8 @@
+.userContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userBtn {
+  margin-left: 32px;
+}

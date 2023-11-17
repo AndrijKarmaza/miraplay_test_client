@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  display: block;
+  margin-bottom: 16px;
+  width: 300px;
+}
+
+.input {
+  display: block;
+  margin-top: 4px;
+}
+
+.label div {
+  font-size: 14px;
+  color: red;
+}
