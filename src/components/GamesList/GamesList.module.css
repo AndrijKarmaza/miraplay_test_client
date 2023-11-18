@@ -1,11 +1,94 @@
 .games_list {
-  padding: 0;
-  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 65px;
+  width: 100%;
 }
 
 .game_item {
+  background: var(--card-bg-color);
+  border: 1px solid #454545;
+  border-radius: 20px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 1;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in;
+  width: 370px;
+}
+
+.game_img {
+  border-radius: 20px 20px 0 0;
+  height: 335px;
+  min-height: 335px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.game_descr_box {
+  padding: 32px;
+}
+
+.game_header {
+  color: var(--main-text-color);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 36px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.game_descr {
+  color: var(--second-text-color);
+  font-size: 12px;
+  font-weight: 300;
+  height: 80px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game_genre_cont {
+  display: flex;
+  gap: 8px;
+  left: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+.game_top {
+  background: var(--main-green-color);
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  color: var(--main-text-color);
+  display: flex;
+  padding: 5px 10px;
+}
+
+.game_genre {
+  background: rgba(12, 5, 32, 0.25);
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  color: var(--main-text-color);
+  display: flex;
+  padding: 5px 10px;
+}
+
+.game_class {
+  align-items: center;
+  background: var(--main-green-color);
+  border-radius: 10px;
+  color: var(--main-text-color);
+  display: flex;
+  padding: 5px 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

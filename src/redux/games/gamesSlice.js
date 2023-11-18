@@ -1,18 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchGames, addContact, deleteContact } from './gamesOperations';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-  Notify.failure('Something went wrong please try later.');
-};
+import { fetchGames, setPage, setGenre } from './gamesOperations';
 
 const gamesSlice = createSlice({
   name: 'games',
   initialState: {
     items: [],
-    category: 'all',
+    currentPage: 1,
+    totalGames: null,
+    genre: false,
     isLoading: false,
     error: null,
   },
@@ -24,7 +19,8 @@ const gamesSlice = createSlice({
     [fetchGames.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = action.payload.games;
+      state.totalGames = action.payload.gamesListLength;
     },
 
     [fetchGames.rejected](state, action) {
@@ -32,32 +28,15 @@ const gamesSlice = createSlice({
       state.error = action.payload;
     },
 
-    // [addContact.pending](state) {
-    //   state.isLoading = true;
-    // },
+    [setPage.fulfilled](state) {
+      state.currentPage += 1;
+    },
 
-    // [addContact.fulfilled](state, action) {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   state.items.push(action.payload);
-    //   Notify.success('Contact successfully added.');
-    // },
+    [setGenre.fulfilled](state, action) {
+      const { payload } = action;
 
-    // [addContact.rejected]: handleRejected,
-
-    // [deleteContact.pending](state) {
-    //   state.isLoading = true;
-    // },
-    // [deleteContact.fulfilled](state, action) {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   const index = state.items.findIndex(
-    //     contact => contact.id === action.payload.id
-    //   );
-    //   state.items.splice(index, 1);
-    //   Notify.success('Contact deleted successfully.');
-    // },
-    // [deleteContact.rejected]: handleRejected,
+      payload === 'ALL' ? (state.genre = false) : (state.genre = payload);
+    },
   },
 });
 

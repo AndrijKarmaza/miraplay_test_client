@@ -5,6 +5,8 @@
   --main-text-color: #eaeaea;
   --second-text-color: #afafaf;
   --main-bg-color: #181818;
+  --card-bg-color: #1c1c1c;
+  --card-border: #454545;
   --error-color: #df1332;
 }
 
@@ -153,4 +155,24 @@ input {
 
 .notiflix-notify {
   text-align: center;
+}
+
+#root {
+  background: linear-gradient(180deg, hsla(0, 0%, 9%, 0), #181818),
+    url(/src/assets/head-bg.png);
+  background-size: cover;
+  height: 650px;
+}
+
+.active {
+  color: var(--main-green-color);
+  transition: all 0.2s linear;
+  align-items: center;
+  border: 1px solid #454545;
+  border-radius: 10px;
+  display: block;
+  font-weight: 700;
+  height: 42px;
+  justify-content: center;
+  width: 72px;
 }

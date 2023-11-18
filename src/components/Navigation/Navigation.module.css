@@ -7,3 +7,19 @@
 .nav_link:first-child {
   margin-right: 50px;
 }
+
+.nav_link {
+  color: #afafaf;
+  font-size: 14px;
+  font-weight: inherit;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  background: none;
+  border: none;
+}
+
+.nav_link:hover {
+  color: var(--main-green-color);
+  transition: all 0.2s linear;
+}

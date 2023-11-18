@@ -1,11 +1,38 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
+  min-height: 500px;
+  padding-bottom: 50px;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: bolder;
-  margin-bottom: 24px;
+.header {
+  color: var(--main-text-color);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 100%;
+  margin-bottom: 42px;
+  text-transform: uppercase;
+}
+
+.btn_see_more {
+  background-color: #242424;
+  border: 1px solid #454545;
+  border-radius: 20px;
+  color: var(--main-text-color);
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  height: 78px;
+  line-height: 143%;
+  margin: 41px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  width: 370px;
+}
+.btn_see_more:hover {
+  background-color: var(--main-green-color);
+  transition: all 0.2s ease;
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://user-reg-backend.onrender.com/';
+const userBaseURL = 'https://user-reg-backend.onrender.com';
 
 const token = {
   set(token) {
@@ -16,7 +16,10 @@ export const registerUser = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/users/register', credentials);
+      const { data } = await axios.post(
+        `${userBaseURL}/users/register`,
+        credentials
+      );
       token.set(data.token);
       return data;
     } catch (error) {
@@ -33,7 +36,10 @@ export const logInUser = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/users/login', credentials);
+      const { data } = await axios.post(
+        `${userBaseURL}/users/login`,
+        credentials
+      );
       token.set(data.token);
       return data;
     } catch (error) {
@@ -50,7 +56,7 @@ export const logOutUser = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
-      await axios.post('/users/logout');
+      await axios.post(`${userBaseURL}/users/logout`);
       token.unSet();
     } catch (error) {
       const { message, response } = error;
@@ -75,7 +81,7 @@ export const fetchCurrentUser = createAsyncThunk(
     token.set(persistedToken);
 
     try {
-      const { data } = await axios.get('/users/current');
+      const { data } = await axios.get(`${userBaseURL}/users/current`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

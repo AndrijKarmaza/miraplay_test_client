@@ -10,14 +10,12 @@ export const Navigation = () => {
       <ul className={css.navigation}>
         <li className={css.nav_link}>
           <NavLink to="/" end>
-            <button>Home</button>
+            Home
           </NavLink>
         </li>
         {isLoggedIn && (
           <li className={css.nav_link}>
-            <NavLink to="/games">
-              <button>Games</button>
-            </NavLink>
+            <NavLink to="/games">Games</NavLink>
           </li>
         )}
       </ul>
