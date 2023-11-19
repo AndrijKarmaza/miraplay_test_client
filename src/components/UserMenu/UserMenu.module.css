@@ -4,5 +4,21 @@
 }
 
 .userBtn {
+  backdrop-filter: blur(10px);
+  background: rgba(63, 156, 20, 0.5);
+  border: 1px solid #3f9c14;
+  color: #eaeaea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: normal;
+  text-transform: uppercase;
   margin-left: 32px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+}
+
+.userBtn:hover {
+  background-color: var(--main-green-color);
 }

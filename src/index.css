@@ -108,6 +108,10 @@
   padding: 0;
 }
 
+html {
+  cursor: url(./assets/cursor.png) 2 2, pointer;
+}
+
 body {
   color: var(--main-text-color);
   font-family: 'Neue Machina', sans-serif;
@@ -165,12 +169,12 @@ input {
 }
 
 .active {
+  display: flex;
   color: var(--main-green-color);
   transition: all 0.2s linear;
   align-items: center;
   border: 1px solid #454545;
   border-radius: 10px;
-  display: block;
   font-weight: 700;
   height: 42px;
   justify-content: center;

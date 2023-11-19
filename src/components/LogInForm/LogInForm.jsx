@@ -16,7 +16,7 @@ export const LogInForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     dispatch(logInUser(values));
     resetForm();
-    isUserLoading && Loading.standard('Loading');
+    isUserLoading && Loading.circle('LOADING');
   };
 
   const schema = object({
@@ -41,17 +41,33 @@ export const LogInForm = () => {
         validationSchema={schema}
       >
         <Form className={css.form}>
+          <h1 className={css.title}>Experience new sensations</h1>
+          <p className={css.descr}>Log in to see games</p>
           <label className={css.label}>
-            Email
+            Enter your email
             <ErrorMessage component="div" name="email" />
-            <Field as="input" type="mail" name="email"></Field>
+            <Field
+              className={css.input}
+              as="input"
+              type="mail"
+              name="email"
+              placeholder="youremail@miraplay.com"
+            ></Field>
           </label>
           <label className={css.label}>
-            Password
+            Enter password
             <ErrorMessage component="div" name="password" />
-            <Field as="input" type="text" name="password"></Field>
+            <Field
+              className={css.input}
+              as="input"
+              type="text"
+              name="password"
+              placeholder="your password"
+            ></Field>
           </label>
-          <button type="submit">Log in</button>
+          <button className={css.btn} type="submit">
+            Log in
+          </button>
         </Form>
       </Formik>
     </>

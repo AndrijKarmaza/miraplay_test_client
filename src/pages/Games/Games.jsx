@@ -35,12 +35,13 @@ const Games = () => {
 
   useEffect(() => {
     dispatch(fetchGames(reqBody));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, page, genre]);
 
   return (
-    <div className={css.container}>
+    <section className={css.container}>
       <h1 className={css.header}>All games</h1>
-      {isLoading && Loading.standard('Loading')}
+      {isLoading && Loading.circle('LOADING')}
       {!isLoading && Loading.remove()}
       {error &&
         Notify.failure('Something went wrong please try to reload page.')}
@@ -56,7 +57,7 @@ const Games = () => {
           </button>
         )}
       </>
-    </div>
+    </section>
   );
 };
 

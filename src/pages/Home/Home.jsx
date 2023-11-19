@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <section className={css.container}>
-      <div>
+      <div className={css.info}>
         <p className={css.descr}>Home - Library of games</p>
         <h1 className={css.title}>Our library of top games</h1>
         {isLoggedIn ? (

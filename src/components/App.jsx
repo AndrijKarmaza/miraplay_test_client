@@ -16,12 +16,35 @@ const Games = lazy(() => import('pages/Games/Games'));
 const Error = lazy(() => import('pages/Error/Error'));
 
 Notify.init({
-  width: '350px',
-  position: 'center-top',
+  width: '500px',
+  position: 'center-center',
   closeButton: true,
   useIcon: false,
   fontFamily: 'Neue Machina',
   fontSize: '16px',
+  messageMaxLength: 300,
+  backOverlay: true,
+  success: {
+    background: '#3f9c14',
+    textColor: '#eaeaea',
+    backOverlayColor: 'rgba(24, 24, 24,0.9)',
+    notiflixIconColor: '#eaeaea',
+  },
+  failure: {
+    background: '#df1332',
+    textColor: '#eaeaea',
+    backOverlayColor: 'rgba(24, 24, 24,0.9)',
+    notiflixIconColor: '#eaeaea',
+  },
+});
+
+Loading.init({
+  backgroundColor: 'rgba(24, 24, 24,0.9)',
+  fontFamily: 'Neue Machina',
+  svgSize: '100px',
+  svgColor: '#3f9c14',
+  messageFontSize: '16px',
+  messageColor: '#eaeaea',
 });
 
 export const App = () => {
@@ -35,7 +58,7 @@ export const App = () => {
   !isUserLoading && Loading.remove();
 
   return isUserLoading ? (
-    Loading.standard('Loading')
+    Loading.circle('LOADING')
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

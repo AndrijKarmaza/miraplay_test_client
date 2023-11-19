@@ -4,6 +4,32 @@
   list-style: none;
 }
 
+.nav_link {
+  display: flex;
+  align-items: center;
+  color: #afafaf;
+  font-size: 14px;
+  font-weight: inherit;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  background: none;
+  border: none;
+}
+
+.nav_link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 42px;
+}
+
+.nav_link:hover {
+  color: var(--main-green-color);
+  transition: all 0.2s linear;
+}
+
 .nav_link:first-child {
   margin-right: 50px;
 }
