@@ -5,6 +5,8 @@
 
 [Жива сторінка](https://andrijkarmaza.github.io/miraplay_test_client/games)
 
+![Homepage](./src/assets/Homepage.JPG)
+
 ## Реалізовано:
 
 - Навігація з публічними та приватними маршрутами.
