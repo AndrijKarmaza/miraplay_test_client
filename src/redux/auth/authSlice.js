@@ -33,7 +33,6 @@ const authSlice = createSlice({
     [registerUser.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      console.dir(action);
     },
 
     [logInUser.pending](state) {
