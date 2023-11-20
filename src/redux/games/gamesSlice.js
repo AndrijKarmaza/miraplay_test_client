@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchGames, setPage, setGenre } from './gamesOperations';
+import {
+  fetchGames,
+  setPage,
+  setGenre,
+  setFreshGames,
+} from './gamesOperations';
 
 const gamesSlice = createSlice({
   name: 'games',
   initialState: {
     items: [],
     currentPage: 1,
+    isFreshGamesFirst: true,
     totalGames: null,
     genre: false,
     isLoading: false,
@@ -33,9 +39,13 @@ const gamesSlice = createSlice({
     },
 
     [setGenre.fulfilled](state, action) {
+      state.currentPage = 1;
       const { payload } = action;
-
       payload === 'ALL' ? (state.genre = false) : (state.genre = payload);
+    },
+
+    [setFreshGames.fulfilled](state) {
+      state.isFreshGamesFirst = !state.isFreshGamesFirst;
     },
   },
 });

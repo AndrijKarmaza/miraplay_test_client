@@ -23,6 +23,13 @@ const GenreList = () => {
   const dispatch = useDispatch();
   const currGenre = useSelector(selectGenre);
 
+  function genreCheck(genre) {
+    if (currGenre === false && genre === 'ALL') {
+      return;
+    }
+    currGenre !== genre && dispatch(setGenre(genre));
+  }
+
   return (
     <ul className={css.genre_list}>
       {genres.map(genre => (
@@ -33,7 +40,7 @@ const GenreList = () => {
               ? css.genre_item_active
               : css.genre_item
           }
-          onClick={() => dispatch(setGenre(genre))}
+          onClick={() => genreCheck(genre)}
         >
           {genre}
         </li>

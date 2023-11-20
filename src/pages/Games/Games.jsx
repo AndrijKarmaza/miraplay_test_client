@@ -11,10 +11,12 @@ import {
   selectGenre,
   selectCurrentPage,
   selectTotalGames,
+  selectFreshGames,
 } from 'redux/games/gamesSelectors';
 import css from './Games.module.css';
 import { setPage } from 'redux/games/gamesOperations';
 import GenreList from 'components/GenreList/GenreList';
+import Sort from 'components/Sort/Sort';
 
 const Games = () => {
   const dispatch = useDispatch();
@@ -23,12 +25,13 @@ const Games = () => {
   const genre = useSelector(selectGenre);
   const page = useSelector(selectCurrentPage);
   const totalGames = useSelector(selectTotalGames);
+  const isFreshGamesFirst = useSelector(selectFreshGames);
 
   const gamesToShow = 9;
 
   const reqBody = {
     page,
-    isFreshGamesFirst: true,
+    isFreshGamesFirst,
     genre,
     gamesToShow,
   };
@@ -36,7 +39,7 @@ const Games = () => {
   useEffect(() => {
     dispatch(fetchGames(reqBody));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, page, genre]);
+  }, [dispatch, page, genre, isFreshGamesFirst]);
 
   return (
     <section className={css.container}>
@@ -46,7 +49,10 @@ const Games = () => {
       {error &&
         Notify.failure('Something went wrong please try to reload page.')}
       <>
-        <GenreList />
+        <div className={css.nav_container}>
+          <GenreList />
+          <Sort />
+        </div>
         <GamesList />
         {page * gamesToShow < totalGames && (
           <button

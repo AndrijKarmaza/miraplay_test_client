@@ -10,7 +10,7 @@ export const Navigation = () => {
     <>
       <ul className={css.navigation}>
         <li className={css.icon_link}>
-          <Link to="/" end className={css.icon_cont}>
+          <Link to="/" className={css.icon_cont}>
             <img className={css.icon} src={icon} alt="icon" />
             <p className={css.icon_header}>MIRAPLAY</p>
             <p className={css.icon_descr}>Cloud Gaming</p>

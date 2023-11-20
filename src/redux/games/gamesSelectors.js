@@ -2,6 +2,8 @@ export const selectGames = state => state.games.items;
 
 export const selectCurrentPage = state => state.games.currentPage;
 
+export const selectFreshGames = state => state.games.isFreshGamesFirst;
+
 export const selectTotalGames = state => state.games.totalGames;
 
 export const selectGenre = state => state.games.genre;

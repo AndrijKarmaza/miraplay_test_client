@@ -26,7 +26,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       Notify.success(
-        'We have sent an email to your email address. To complete the registration, please follow the link provided in the email.'
+        'We have sent an email to your email address. To complete the registration, please follow the link provided in the email and then log in.'
       );
     },
 

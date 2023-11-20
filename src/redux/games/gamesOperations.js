@@ -18,3 +18,5 @@ export const fetchGames = createAsyncThunk(
 export const setPage = createAsyncThunk('games/setPage', () => {});
 
 export const setGenre = createAsyncThunk('games/setGenre', genre => genre);
+
+export const setFreshGames = createAsyncThunk('games/setFreshGames', () => {});
